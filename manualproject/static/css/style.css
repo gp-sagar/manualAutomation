@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Navabr */
+#logo{
+    width: 10rem;
+    padding: 8px;
+    border: 1px solid #D1D9E6;
+    border-radius: 6px;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+}
+/* Dashboard */
+.outer-box{
+    background-color: rgb(230, 231, 238);
+    border: 1px solid #D1D9E6;
+    padding: 20px;
+    box-shadow: rgb(184 185 190) 2px 2px 5px inset;  
+}
+.inner-box{
+    background: #e6e7ee;
+    border: 1px solid #D1D9E6;
+    border-radius: 7px;
+    box-shadow: 0px 0px 17px 3px #fff;
+}
+.card-search-title{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.lable-title{
+    width: 10rem;
+    margin: auto;
+}
+.select-group{
+    display: flex;
+}
+
+.property, .meter{
+    background-color: rgb(230, 231, 238);
+    border: none;
+    padding: 9px;
+    box-shadow: rgb(184 185 190) 2px 2px 5px inset; 
+    margin: 0 10px;
+}
+.drop-data{
+    background: #e6e7ee;
+    border-radius: 5px;
+    box-shadow: 0px 0px 17px 3px #fff;
+}
+#view-btn{
+    border: 1px solid #D1D9E6;
+    border-radius: 6px;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+}
+
+#view-btn:hover{
+    border-radius: 7px;
+    background: #D1D9E6;
+    box-shadow: inset 20px 10px 20px #a4a4a4,
+            inset -10px -10px 20px #ffffff;
+}
+
+#lable-sec{
+    background-color: rgb(230, 231, 238);
+    border: 1px solid #D1D9E6;
+    box-shadow: rgb(184 185 190) 2px 2px 5px inset; 
+}
+.inner-lable{
+    background: #e6e7ee;
+    border: 1px solid #D1D9E6;
+    border-radius: 7px;
+    box-shadow: 0px 0px 17px 3px #fff;
+    width: 100%;
+    padding: 6px 10px;
+    position: relative;
+}
+.edit-icon{
+    position: absolute;
+    right: 0;
+    top: 0px;
+    background-color: rgb(230, 231, 238);
+    box-shadow: rgb(184 185 190) 2px 2px 5px inset;  
+}
+#tooglebtn{
+    border: none;
+}
+#modal-btn{
+    border: none;
+    color: #000000;
+    background-color: rgb(230, 231, 238);
+    box-shadow: rgb(184 185 190) 2px 2px 5px inset;  
+}
+#modal-btn:hover{
+    background: #e6e7ee;
+    border: 1px solid #D1D9E6;
+    border-radius: 7px;
+    box-shadow: 0px 0px 14px 3px #969494;
+}
+#modal-details{
+    border: 1px solid #D1D9E6;
+    background-color: rgb(230, 231, 238);
+    box-shadow: rgb(184 185 190) 2px 2px 5px inset;
+}
+#update-input{
+    border: 1px solid #D1D9E6;
+    background-color: rgb(230, 231, 238);
+    box-shadow: rgb(184 185 190) 2px 2px 5px inset;
+}
+
+#fidder-select{
+    background-color: rgb(230, 231, 238);
+    border: 1px solid #D1D9E6;
+    box-shadow: rgb(184 185 190) 2px 2px 5px inset;
+}
+
+.hname{
+    position: absolute;
+    right: 36px;
+    top: 20px;
+}
