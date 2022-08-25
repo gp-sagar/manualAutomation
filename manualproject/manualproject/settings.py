@@ -78,9 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_office',
-        'USER': 'sagarsi02',
-        'PASSWORD': 'Sagarsi@786',
-        'HOST': 'gpdbinstance.cq1tcax6ahm5.ap-south-1.rds.amazonaws.com',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
