@@ -63,10 +63,7 @@ class MicrogridSurveydtr(models.Model):
         if site_ids:
             return MicrogridSurveydtr.objects.filter(site_id__in=site_ids).values('site_id', 'site_name')
         return  MicrogridSurveydtr.objects.all().values('site_id', 'site_name')
-    
-    # @staticmethod
-    # def get_site_meter(meter):
-    #     return  MicrogridSurveydtr.objects.filter(meter=meter)
+
 
     class Meta:
         managed = False

@@ -30,8 +30,8 @@
 }
 
 /* Select Library */
-.select2 {
-  width: 20vw !important;
+span.select2-container--default {
+  width: 18vw;
   background-color: rgb(230, 231, 238);
   border: 1px solid #d1d9e6;
   box-shadow: rgb(184 185 190) 2px 2px 5px inset;

@@ -96,8 +96,18 @@ class MicrogridSurveyhouseholdinfo(models.Model):
         return (
             MicrogridSurveyhouseholdinfo.objects
             .filter(site_id=site_id)
+            .exclude(meter_serial="")
             .values_list('meter_serial', flat=True)
         )
+        
+    @staticmethod
+    def get_property_meter(site_id: str):
+         return (
+             MicrogridSurveyhouseholdinfo.objects.filter
+             (site_id=site_id, meter_serial=meter )
+             .values('site_name', 'meter_serial', 'grid_id', 'site_id' )
+             .first()
+         )
         
 
     class Meta:

@@ -41,7 +41,7 @@
     border: none;
     padding: 9px;
     box-shadow: rgb(184 185 190) 2px 2px 5px inset; 
-    margin: 0 10px;
+    margin: 15px 10px;
 }
 .drop-data{
     background: #e6e7ee;
@@ -118,4 +118,85 @@
     position: absolute;
     right: 36px;
     top: 20px;
+}
+#dataGrid{
+    width: 30vw;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1081px) {
+    /* Dashboard */
+    #prop_meter{
+        flex-direction: column;
+    }
+    .property, .meter{
+        width: 59vw;
+    }
+    .lable-title {
+        width: 21vw;
+        margin: 10px 0;
+    }
+    .select2 {
+        width: 58vw !important;
+    }
+    #select2-selectProperty-container, #select2-selectMeter-container{
+        line-height: 37px;
+    }
+
+    /* Fetch data */
+    #relate_data{
+        flex-direction: column;
+        align-items: center;
+    }
+    #dataGrid {
+        width: 70vw;
+    }
+    
+}
+
+
+@media screen and (max-width: 630px) {
+    .property, .meter {
+        width: 80vw;
+    }
+    .lable-title{
+
+    }
+    
+}
+
+
+@media screen and (max-width: 500px) {
+    .lable-title{
+        font-size: 2.5vw !important;
+    }
+    #select2-selectProperty-container, #select2-selectMeter-container {
+        line-height: 30px;
+        font-size: 3.5vw;
+    }
+    .property, .meter {
+        width: 70vw;
+    }    
+    #dataGrid {
+        width: 90vw;
+        font-size: 4vw;
+    }
+    #tooglebtn{
+        padding: 1.4vw 3vw;
+    }
+    
+}
+
+@media screen and (max-width: 351px) {
+    #tooglebtn {
+        padding: 1.6vh 2vw;
+    }
+}
+
+
+@media screen and (max-width: 290px) {
+    #tooglebtn {
+        padding: 0.4vh 2vw;
+    }
 }
