@@ -38,17 +38,20 @@ def get_json_data(request):
     if not all([site_id, meter]):
         return JsonResponse({"message": "Site and meter are required."}, safe=False, status=400)
     query = """
-    Select sdtr.site_name, is_real_estate, sshi.grid_id, sc_no, msf.feeder_name
-    from microgrid_surveyhouseholdinfo as sshi
-    inner join microgrid_surveydtr as sdtr
-    on sshi.site_id = sdtr.site_id
-    inner join dcu_info as di
-    on sshi.site_id = di.site_id
-    inner join microgrid_surveyfeeder as msf
-    on di.feeder_id = msf.feeder_id
+    Select 
+        sdtr.site_name, is_real_estate, sshi.grid_id, sc_no, msf.feeder_name
+    from 
+        microgrid_surveyhouseholdinfo as sshi
+    inner join 
+        microgrid_surveydtr as sdtr on sshi.site_id = sdtr.site_id
+    inner join 
+        dcu_info as di on sshi.site_id = di.site_id
+    inner join 
+        microgrid_surveyfeeder as msf on di.feeder_id = msf.feeder_id
     where
         sshi.site_id =  %(site_id)s
-    and meter_serial =  %(meter)s
+    and 
+        meter_serial =  %(meter)s
     """
     datas = my_custom_sql(query, {'site_id':site_id, 'meter': meter}, fetchone=True)
 
