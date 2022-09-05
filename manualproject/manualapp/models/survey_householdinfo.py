@@ -95,9 +95,9 @@ class MicrogridSurveyhouseholdinfo(models.Model):
     def get_meter_list(site_id: str):
         return (
             MicrogridSurveyhouseholdinfo.objects
-            .filter(site_id=site_id)
-            .exclude(meter_serial="")
-            .values_list('meter_serial', flat=True)
+            .filter(site_id=site_id,)
+            .exclude(meter_serial="", meter_mapping="", meter_address="")
+            .values('meter_serial', 'meter_mapping', 'meter_address')
         )
         
     @staticmethod

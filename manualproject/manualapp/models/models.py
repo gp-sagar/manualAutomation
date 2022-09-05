@@ -153,21 +153,6 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
-class MicrogridSurveyfeeder(models.Model):
-    feeder_id = models.CharField(unique=True, max_length=100)
-    pss = models.ForeignKey('MicrogridSurveypss', models.DO_NOTHING)
-    feeder_name = models.CharField(max_length=100)
-    rated_capacity = models.CharField(max_length=30)
-    latitude = models.FloatField()
-    longitude = models.FloatField()
-    feeder_code = models.CharField(max_length=30, blank=True, null=True)
-    time_old = models.CharField(max_length=100, blank=True, null=True)
-    time = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'microgrid_surveyfeeder'
-
 
 class MicrogridSurveypss(models.Model):
     pss_id = models.CharField(unique=True, max_length=200)
