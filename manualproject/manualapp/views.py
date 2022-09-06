@@ -1,13 +1,14 @@
 from dataclasses import field
 from distutils.log import error
 from django.views.decorators.http import require_http_methods
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from manualapp.models.survey_feeder import MicrogridSurveyfeeder
 from .models import MicrogridSurveydtr
 from .models import MicrogridSurveyhouseholdinfo
+from .models import PortalAuthUser
 from .models.connection import my_custom_sql
-from manualapp.models.forms import siteform, FeederForm
+from manualapp.models.forms import siteform, FeederForm, HesForm
 from django.contrib import messages
 
 
@@ -17,9 +18,17 @@ from django.contrib import messages
 # Index Page
 def index(request):
     return render(request, 'index.html')
+
+
+
 # HES Access Page
 def hesAccess(request):
-    return render(request, 'hesaccess.html')
+    username = request.GET.get('username')
+    return render(request, 'hesaccess.html', {'updatehes': username})
+
+
+
+
 # Meter Details Page
 def meterDetails(request):
     return render(request, 'meterDetails.html')
@@ -117,14 +126,32 @@ def update_site_name(request, site_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Record Updated Successfully')
-            return render(request, 'siteupdate.html', {'updaterecord': update_site})
+            return render(request, 'siteupdate.html', {'updatehes': update_site})
         # print(form.errors)
         for field, error in form.errors.items():
             for text in error:
                 messages.error(request, f'{field}: {text}')
-        return render(request, 'siteupdate.html', {'updaterecord': update_site})
+        return render(request, 'siteupdate.html', {'updatehes': update_site})
     form = siteform(instance=update_site)
     return render(request,  'siteupdate.html', {'form': form})
+
+# Hes Access Update
+def update_hes_access(request):
+    hes_user = request.POST.get('username')
+    update_hes = PortalAuthUser.objects.get(username=hes_user)
+    if request.method == 'POST':
+        form = HesForm(request.POST, instance=update_hes)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Record Updated successfully')
+            return redirect(request, 'hesaccess')
+        for field, error in form.errors.items():
+            for text in error:
+                messages.error(request, f'{field}: {text}')
+            return redirect(request, 'hesaccess')
+    return render(request,  'hesaccess.html', {'form': form})
+            
+    
 
 # Feeder Update Page
 def editfeeder(request):
@@ -141,6 +168,7 @@ def feederlist(request):
     feeder_lis_data = list(MicrogridSurveyfeeder.get_feeder_list(params))
     return JsonResponse({'feeder': feeder_lis_data})
 
+# Feeder Update Logic
 def update_feeder_name(request, site_id):
     update_feeder = MicrogridSurveydtr.objects.get(site_id=site_id)
     if request.method == 'POST':

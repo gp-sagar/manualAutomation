@@ -1,9 +1,9 @@
 from .survey_dtr import MicrogridSurveydtr
 from .survey_householdinfo import MicrogridSurveyhouseholdinfo
-# from .survey_feeder import MicrogridSurveyfeeder
+from .portal_auth_user import PortalAuthUser
 
 __all__ = (
     'MicrogridSurveydtr',
     'MicrogridSurveyhouseholdinfo',
-    # 'MicrogridSurveyfeeder'
+    'PortalAuthUser',
 )

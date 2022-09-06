@@ -14,6 +14,7 @@ urlpatterns = [
     path('hes_access/', views.hes_access, name='hes_access'),
     path('siteupdate/<str:site_id>', views.siteupdate, name='siteupdate'),
     path('update_site_name/<str:site_id>', views.update_site_name, name='update_site_name'),
+    path('update_hes_access/', views.update_hes_access, name='update_hes_access'),
     path('editfeeder/', views.editfeeder, name='editfeeder'),
     path('feeder-list/', views.feederlist, name='feederlist'),
     path('update_feeder_name/<str:site_id>', views.update_feeder_name, name='update_feeder_name'),

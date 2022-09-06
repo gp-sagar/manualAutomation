@@ -114,14 +114,16 @@
     box-shadow: rgb(184 185 190) 2px 2px 5px inset;
 }
 
-.hname{
-    position: absolute;
-    right: 36px;
-    top: 20px;
-}
 #dataGrid{
     width: 30vw;
 }
+#hes_form {
+    width: 100vw;
+}
+.select2-container--default .select2-selection--multiple{
+    background-color: #e6e7ee !important;
+}
+
 
 /* Responsive */
 
@@ -199,4 +201,26 @@
     #tooglebtn {
         padding: 0.4vh 2vw;
     }
+}
+
+/* HES Access form */
+@media screen and (max-width: 1145px) {
+    #access_details{
+        flex-direction: column-reverse;
+    }
+    #hes_form{
+        /* width: auto; */
+    }
+    #command_access, #site-access{
+        width: 100vh;
+    }
+    #SiteAccess, #CommandAccess{
+        display: flex;
+        margin: auto;
+        justify-content: center;
+    }
+    /* #command_access_chosen,
+    #site_access_chosen {
+        width: 70vw !important;
+    } */
 }

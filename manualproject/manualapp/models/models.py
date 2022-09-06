@@ -48,6 +48,7 @@ class AuthUser(models.Model):
         db_table = 'auth_user'
 
 
+
 class AuthUserGroups(models.Model):
     id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
@@ -167,3 +168,4 @@ class MicrogridSurveypss(models.Model):
     class Meta:
         managed = False
         db_table = 'microgrid_surveypss'
+
